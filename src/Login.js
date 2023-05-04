@@ -15,12 +15,12 @@ function Login(){
         e.preventDefault();
         // firebase register
         auth
-            .createUserWithEmailAndPassword(email.password)
+            .createUserWithEmailAndPassword(email,password)
             .then((auth)=>{
                 // successfully creates a user with email and password
                 console.log(auth);
             })
-            .catch
+            .catch(error=>alert(error.message))
     }
     return(
         <div className="login">
@@ -28,6 +28,7 @@ function Login(){
                 <img 
                     className="login_logo"
                     src="https://logos-world.net/wp-content/uploads/2020/04/Amazon-Logo.png"
+                    alt=""
                 />
             </Link>
             <div className="login_container">
